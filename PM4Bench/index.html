@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="PM4Bench: a strictly parallel multilingual, multimodal, multi-task benchmark and OCR-centric GRPO study for LVLMs.">
+    <meta name="theme-color" content="#102a43">
+    <title>PM4Bench — Multilingual LVLM Benchmark</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="nav wrap" aria-label="Primary navigation">
+        <a class="brand" href="#top" aria-label="PM4Bench home">PM<sup>4</sup>Bench</a>
+        <div class="nav-links">
+          <a href="#benchmark">Benchmark</a>
+          <a href="#qgo">QGO-8B</a>
+          <a href="#resources">Resources</a>
+        </div>
+      </nav>
+
+      <main id="top" class="hero-content wrap">
+        <p class="eyebrow">EMNLP 2026 Main Conference · Accepted</p>
+        <h1>Benchmarking and Boosting Multilingual Capabilities of LVLMs via OCR-Centric Reinforcement Learning</h1>
+        <p class="lede">
+          PM<sup>4</sup>Bench provides strictly parallel evaluation across ten
+          languages, then uses that controlled setting to expose OCR as a key
+          bottleneck in multilingual visual reasoning.
+        </p>
+        <p class="authors">
+          Junyuan Gao*, Jiahe Song*, Jiang Wu‡, Runchuan Zhu, Guanlin Shen,
+          Shasha Wang, Xingjian Wei, Haote Yang, Weijia Li, Bin Wang,
+          Lijun Wu, Conghui He†
+        </p>
+        <p class="affiliations">
+          Shanghai Artificial Intelligence Laboratory · Shanghai Jiao Tong University ·
+          National University of Singapore · Tsinghua SIGS
+        </p>
+        <div class="actions" aria-label="Project resources">
+          <a class="button primary" href="https://arxiv.org/abs/2503.18484">Paper</a>
+          <a class="button" href="https://github.com/opendatalab/PM4Bench">Code</a>
+          <a class="button" href="https://huggingface.co/datasets/songjhPKU/PM4Bench">Benchmark</a>
+          <a class="button" href="https://huggingface.co/DatasetMan/QGO-8B">QGO-8B</a>
+        </div>
+      </main>
+    </header>
+
+    <section class="summary wrap" aria-label="PM4Bench at a glance">
+      <div><strong>10</strong><span>parallel languages</span></div>
+      <div><strong>4</strong><span>complementary tasks</span></div>
+      <div><strong>2</strong><span>input settings</span></div>
+      <div><strong>20K</strong><span>released QGO rows</span></div>
+    </section>
+
+    <section id="benchmark" class="section wrap">
+      <p class="section-label">The benchmark</p>
+      <h2>Same content, different languages</h2>
+      <p class="section-intro">
+        Non-parallel corpora mix language effects with differences in content
+        and difficulty. PM<sup>4</sup>Bench keeps content aligned across Arabic,
+        Czech, English, Hungarian, Korean, Russian, Serbian, Thai, Vietnamese,
+        and Chinese, enabling apples-to-apples cross-lingual comparison.
+      </p>
+
+      <div class="setting-grid">
+        <article>
+          <span class="index">01</span>
+          <h3>Traditional setting</h3>
+          <p>Text remains text while images remain visual inputs.</p>
+        </article>
+        <article>
+          <span class="index">02</span>
+          <h3>Vision setting</h3>
+          <p>Textual inputs are rendered into images to test unified visual perception and reasoning.</p>
+        </article>
+      </div>
+
+      <div class="task-grid">
+        <article>
+          <p class="task-code">MDUR</p>
+          <h3>Understanding &amp; reasoning</h3>
+          <p>Knowledge-intensive multiple-choice reasoning across disciplines.</p>
+        </article>
+        <article>
+          <p class="task-code">MIQA</p>
+          <h3>Multi-image QA</h3>
+          <p>Open-ended reasoning over related images and multilingual prompts.</p>
+        </article>
+        <article>
+          <p class="task-code">MSOCR</p>
+          <h3>Multi-scale OCR</h3>
+          <p>A controlled probe of recognition across scripts and text scales.</p>
+        </article>
+        <article>
+          <p class="task-code">MGUI</p>
+          <h3>GUI grounding</h3>
+          <p>Multilingual coordinate grounding in programmatically generated interfaces.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="qgo" class="section dark">
+      <div class="wrap split">
+        <div>
+          <p class="section-label">From diagnosis to intervention</p>
+          <h2>OCR-centric GRPO, without VQA supervision</h2>
+        </div>
+        <div class="qgo-copy">
+          <p>
+            Controlled evaluation identifies OCR as a key factor behind
+            cross-lingual disparity when language is rendered visually. QGO
+            trains on fully synthesized, label-free OCR data with a reward that
+            combines recognition accuracy with response-format and length
+            constraints.
+          </p>
+          <p>
+            The released QGO-8B checkpoint improves general multilingual VQA,
+            reduces disparity under vision input, and transfers gains beyond
+            PM<sup>4</sup>Bench while preserving its reasoning behavior.
+          </p>
+          <a class="text-link" href="https://huggingface.co/datasets/DatasetMan/PM4Bench-QGO-Train">Explore the released training data →</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="resources" class="section wrap">
+      <p class="section-label">Open resources</p>
+      <h2>One clean release, four entry points</h2>
+      <div class="resource-grid">
+        <a href="https://github.com/opendatalab/PM4Bench">
+          <span>Code</span>
+          <strong>Evaluation, validation, construction, and QGO recipe</strong>
+        </a>
+        <a href="https://huggingface.co/datasets/songjhPKU/PM4Bench">
+          <span>Benchmark</span>
+          <strong>Deduplicated images with portable JSONL and Parquet metadata</strong>
+        </a>
+        <a href="https://huggingface.co/datasets/DatasetMan/PM4Bench-QGO-Train">
+          <span>Training data</span>
+          <strong>19,500 training and 500 validation examples</strong>
+        </a>
+        <a href="https://huggingface.co/DatasetMan/QGO-8B">
+          <span>Model</span>
+          <strong>Full BF16 QGO-8B checkpoint at global step 200</strong>
+        </a>
+      </div>
+      <p class="release-note">
+        The former TSV/base64 packaging is retired in v2. The arXiv link will
+        continue to point to the current public record until the accepted
+        manuscript revision is uploaded.
+      </p>
+    </section>
+
+    <footer>
+      <div class="wrap footer-content">
+        <p><strong>PM<sup>4</sup>Bench</strong> · EMNLP 2026 Main Conference</p>
+        <p>Project-owned code and artifacts are released under Apache-2.0; see each dataset card for component-level upstream licenses.</p>
+      </div>
+    </footer>
+  </body>
+</html>
