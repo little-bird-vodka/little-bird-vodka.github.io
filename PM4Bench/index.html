@@ -24,9 +24,10 @@
         <p class="eyebrow">EMNLP 2026 Main Conference · Accepted</p>
         <h1>Benchmarking and Boosting Multilingual Capabilities of LVLMs via OCR-Centric Reinforcement Learning</h1>
         <p class="lede">
-          A controlled multilingual benchmark isolates language effects, reveals
-          OCR as a shared bottleneck, and turns that diagnosis into a low-cost
-          reinforcement-learning intervention.
+          PM<sup>4</sup>Bench supports controlled evaluation across ten
+          languages. The experiments identify OCR as a key source of
+          cross-lingual performance gaps and motivate an OCR-centric
+          reinforcement-learning method.
         </p>
         <p class="authors">
           Junyuan Gao*, Jiahe Song*, Jiang Wu‡, Runchuan Zhu, Guanlin Shen,
@@ -61,8 +62,9 @@
           <figcaption id="teaser-title">
             <strong>Overview.</strong> PM<sup>4</sup>Bench controls content across
             languages, places text inside pixels to reflect agent deployment,
-            diagnoses OCR as a shared bottleneck, and tests whether a targeted
-            OCR intervention transfers to broader multilingual capabilities.
+            and evaluates four complementary tasks. The experiments identify
+            OCR as a key bottleneck and evaluate an OCR-centric intervention on
+            PM<sup>4</sup>Bench and external benchmarks.
             Open the figure for the full-resolution view.
           </figcaption>
         </figure>
@@ -93,23 +95,23 @@
 
       <section class="section highlights-band" aria-labelledby="contributions-title">
         <div class="wrap">
-          <p class="section-label">Evaluation → diagnosis → intervention</p>
-          <h2 id="contributions-title">The paper closes the loop</h2>
+          <p class="section-label">Main contributions</p>
+          <h2 id="contributions-title">Controlled evaluation, OCR diagnosis, and targeted training</h2>
           <div class="contribution-grid">
             <article>
               <span class="step">01</span>
-              <h3>Measure fairly</h3>
-              <p>Hold semantics, layout, and answers fixed across ten languages so language is the controlled variable.</p>
+              <h3>Controlled evaluation</h3>
+              <p>Semantics, layout, and answers are fixed across ten languages, making language the controlled variable.</p>
             </article>
             <article>
               <span class="step">02</span>
-              <h3>Diagnose the gap</h3>
-              <p>Compare interleaved input with text rendered into pixels, then trace the new disparity to OCR.</p>
+              <h3>OCR diagnosis</h3>
+              <p>Interleaved input is compared with text rendered into pixels, followed by controlled OCR analyses.</p>
             </article>
             <article>
               <span class="step">03</span>
-              <h3>Act on the cause</h3>
-              <p>Train with synthetic OCR data and a dual reward that improves recognition without sacrificing reasoning.</p>
+              <h3>OCR-centric GRPO</h3>
+              <p>Synthetic OCR data and a dual reward improve recognition while preserving reasoning behavior.</p>
             </article>
           </div>
         </div>
@@ -117,7 +119,7 @@
 
       <section id="benchmark" class="section wrap">
         <p class="section-label">PM⁴Bench</p>
-        <h2>A controlled benchmark, not just another multilingual collection</h2>
+        <h2>Strictly parallel evaluation across ten languages</h2>
         <p class="section-intro">
           Every language receives the same underlying content. PM<sup>4</sup>Bench
           preserves meaningful script-level differences while removing the
@@ -177,11 +179,11 @@
       <section id="findings" class="section dark">
         <div class="wrap">
           <p class="section-label">Key finding</p>
-          <h2>When text becomes pixels, OCR becomes the shared bottleneck</h2>
+          <h2>OCR is a key factor in the vision-setting gap</h2>
           <p class="dark-intro">
             The two settings differ mainly in where text lives. That controlled
-            change lets us test OCR as a causal explanation rather than merely
-            report a leaderboard correlation.
+            difference is analyzed through ground-truth OCR input, per-language
+            correlations, and an OCR-focused training intervention.
           </p>
 
           <div class="evidence-grid">
@@ -203,9 +205,9 @@
           </div>
 
           <p class="finding-conclusion">
-            Base-model capability remains the upper bound, but these converging
-            signals make OCR a high-leverage intervention point for multilingual
-            LVLMs.
+            Together, these results identify OCR as a practical target for
+            improving multilingual LVLMs. Base-model capability remains the
+            upper bound.
           </p>
         </div>
       </section>
@@ -213,8 +215,8 @@
       <section id="qgo" class="section wrap">
         <div class="split">
           <div>
-            <p class="section-label">From finding to method</p>
-            <h2>QGO: OCR-centric GRPO that preserves reasoning</h2>
+            <p class="section-label">OCR-centric training</p>
+            <h2>QGO: OCR-centric GRPO with a dual reward</h2>
           </div>
           <div class="qgo-copy">
             <p>
@@ -246,8 +248,8 @@
       <section id="resources" class="section resources-section">
         <div class="wrap resource-copy">
           <div>
-            <p class="section-label">Paper &amp; artifacts</p>
-            <h2>Read, evaluate, and reproduce</h2>
+            <p class="section-label">Links</p>
+            <h2>Paper, code, data, and model</h2>
             <p>
               The current arXiv record remains available while the accepted
               manuscript revision is prepared. Code, benchmark data, training
