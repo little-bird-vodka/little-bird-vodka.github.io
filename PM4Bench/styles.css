@@ -477,6 +477,41 @@ code {
   font-size: 0.83rem;
 }
 
+.citation-section {
+  color: var(--white);
+  background: var(--ink);
+}
+
+.citation-copy {
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.citation-copy > div > p:last-child {
+  max-width: 430px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.citation-copy pre {
+  max-width: 100%;
+  margin: 0;
+  padding: 26px;
+  overflow-x: auto;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.06);
+  font-size: 0.78rem;
+  line-height: 1.65;
+}
+
+.citation-copy code {
+  padding: 0;
+  background: transparent;
+  font-size: inherit;
+}
+
 footer {
   padding-block: 44px;
   color: rgba(255, 255, 255, 0.7);
@@ -510,7 +545,8 @@ footer {
   .method-strip div:nth-child(2) { border-right: 0; }
   .method-strip div:nth-child(-n + 2) { border-bottom: 1px solid var(--line); }
   .split,
-  .resource-copy {
+  .resource-copy,
+  .citation-copy {
     grid-template-columns: 1fr;
     gap: 42px;
   }
