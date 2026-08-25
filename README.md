@@ -14,3 +14,7 @@ browser delivery and linked to its full-resolution view.
 
 The paper buttons point to arXiv v3, and the page includes a copy-ready BibTeX
 entry matching the official arXiv citation.
+
+`PM4Bench/paper-v3.html` is a stable project-domain redirect to the versioned
+arXiv record. Hugging Face cards use it to avoid the Hub's stale unversioned
+Papers metadata while still taking visitors directly to v3.
