@@ -12,8 +12,8 @@ diagnosis, and OCR-centric GRPO—rather than presenting the release process.
 Its lead visual is the paper's opening teaser, rasterized at 2304 × 1056 for
 browser delivery and linked to its full-resolution view.
 
-The paper buttons point to arXiv v3, and the page includes a copy-ready BibTeX
-entry matching the official arXiv citation.
+The paper buttons offer both the ACL Anthology version and arXiv v3, and the
+page includes the official ACL Anthology BibTeX entry, copy-ready.
 
 `PM4Bench/paper-v3.html` is a stable project-domain redirect to the versioned
 arXiv record. Hugging Face cards use it to avoid the Hub's stale unversioned
